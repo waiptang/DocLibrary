@@ -19,6 +19,8 @@ namespace DocLibrary
 
         private void ConfigForm_Load(object sender, EventArgs e)
         {
+            // TODO: 这行代码将数据加载到表“docLibDataSet.DocumentTypes”中。您可以根据需要移动或删除它。
+            this.documentTypesTableAdapter.Fill(this.docLibDataSet.DocumentTypes);
             // TODO: 这行代码将数据加载到表“docLibDataSet.Configurations”中。您可以根据需要移动或删除它。
             this.configurationsTableAdapter.Fill(this.docLibDataSet.Configurations);
 
@@ -31,6 +33,7 @@ namespace DocLibrary
                 this.Validate();
                 this.configurationsBindingSource.EndEdit();
                 this.configurationsTableAdapter.Update(this.docLibDataSet.Configurations);
+                this.documentTypesTableAdapter.Update(this.docLibDataSet.DocumentTypes);
                 MessageBox.Show("保存成功");
                 this.DialogResult = DialogResult.OK;
             }
@@ -41,6 +44,11 @@ namespace DocLibrary
                 this.Close();
             }
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

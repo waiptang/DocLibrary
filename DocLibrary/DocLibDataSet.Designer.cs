@@ -30,6 +30,8 @@ namespace DocLibrary {
         
         private DocumentTypesDataTable tableDocumentTypes;
         
+        private DocumentsListDataTable tableDocumentsList;
+        
         private global::System.Data.DataRelation relationConfigurationsDocuments;
         
         private global::System.Data.DataRelation relationDocumentTypesDocuments;
@@ -70,6 +72,9 @@ namespace DocLibrary {
                 }
                 if ((ds.Tables["DocumentTypes"] != null)) {
                     base.Tables.Add(new DocumentTypesDataTable(ds.Tables["DocumentTypes"]));
+                }
+                if ((ds.Tables["DocumentsList"] != null)) {
+                    base.Tables.Add(new DocumentsListDataTable(ds.Tables["DocumentsList"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -116,6 +121,16 @@ namespace DocLibrary {
         public DocumentTypesDataTable DocumentTypes {
             get {
                 return this.tableDocumentTypes;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DocumentsListDataTable DocumentsList {
+            get {
+                return this.tableDocumentsList;
             }
         }
         
@@ -195,6 +210,9 @@ namespace DocLibrary {
                 if ((ds.Tables["DocumentTypes"] != null)) {
                     base.Tables.Add(new DocumentTypesDataTable(ds.Tables["DocumentTypes"]));
                 }
+                if ((ds.Tables["DocumentsList"] != null)) {
+                    base.Tables.Add(new DocumentsListDataTable(ds.Tables["DocumentsList"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -246,6 +264,12 @@ namespace DocLibrary {
                     this.tableDocumentTypes.InitVars();
                 }
             }
+            this.tableDocumentsList = ((DocumentsListDataTable)(base.Tables["DocumentsList"]));
+            if ((initTable == true)) {
+                if ((this.tableDocumentsList != null)) {
+                    this.tableDocumentsList.InitVars();
+                }
+            }
             this.relationConfigurationsDocuments = this.Relations["ConfigurationsDocuments"];
             this.relationDocumentTypesDocuments = this.Relations["DocumentTypesDocuments"];
         }
@@ -264,6 +288,8 @@ namespace DocLibrary {
             base.Tables.Add(this.tableDocuments);
             this.tableDocumentTypes = new DocumentTypesDataTable();
             base.Tables.Add(this.tableDocumentTypes);
+            this.tableDocumentsList = new DocumentsListDataTable();
+            base.Tables.Add(this.tableDocumentsList);
             this.relationConfigurationsDocuments = new global::System.Data.DataRelation("ConfigurationsDocuments", new global::System.Data.DataColumn[] {
                         this.tableConfigurations.BranchCodeColumn}, new global::System.Data.DataColumn[] {
                         this.tableDocuments.BranchCodeColumn}, false);
@@ -289,6 +315,12 @@ namespace DocLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeDocumentTypes() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDocumentsList() {
             return false;
         }
         
@@ -355,6 +387,9 @@ namespace DocLibrary {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void DocumentTypesRowChangeEventHandler(object sender, DocumentTypesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DocumentsListRowChangeEventHandler(object sender, DocumentsListRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -670,6 +705,14 @@ namespace DocLibrary {
             
             private global::System.Data.DataColumn columnDocCreationTime;
             
+            private global::System.Data.DataColumn columnDocLastUpdateTime;
+            
+            private global::System.Data.DataColumn columnTransfered;
+            
+            private global::System.Data.DataColumn columnDemised;
+            
+            private global::System.Data.DataColumn columnRemark;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DocumentsDataTable() {
@@ -769,6 +812,38 @@ namespace DocLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocLastUpdateTimeColumn {
+                get {
+                    return this.columnDocLastUpdateTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TransferedColumn {
+                get {
+                    return this.columnTransfered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DemisedColumn {
+                get {
+                    return this.columnDemised;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RemarkColumn {
+                get {
+                    return this.columnRemark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -804,7 +879,7 @@ namespace DocLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DocumentsRow AddDocumentsRow(ConfigurationsRow parentConfigurationsRowByConfigurationsDocuments, string DocCode, short YearofCreation, DocumentTypesRow parentDocumentTypesRowByDocumentTypesDocuments, string DocName, int DocRetention, System.DateTime DocCreationTime) {
+            public DocumentsRow AddDocumentsRow(ConfigurationsRow parentConfigurationsRowByConfigurationsDocuments, string DocCode, short YearofCreation, DocumentTypesRow parentDocumentTypesRowByDocumentTypesDocuments, string DocName, short DocRetention, System.DateTime DocCreationTime, System.DateTime DocLastUpdateTime, bool Transfered, bool Demised, string Remark) {
                 DocumentsRow rowDocumentsRow = ((DocumentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -814,7 +889,11 @@ namespace DocLibrary {
                         null,
                         DocName,
                         DocRetention,
-                        DocCreationTime};
+                        DocCreationTime,
+                        DocLastUpdateTime,
+                        Transfered,
+                        Demised,
+                        Remark};
                 if ((parentConfigurationsRowByConfigurationsDocuments != null)) {
                     columnValuesArray[1] = parentConfigurationsRowByConfigurationsDocuments[1];
                 }
@@ -828,7 +907,7 @@ namespace DocLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DocumentsRow FindByBranchCodeDocCodeYearofCreationDocTypeDocNameDocRetention(string BranchCode, string DocCode, short YearofCreation, string DocType, string DocName, int DocRetention) {
+            public DocumentsRow FindByBranchCodeDocCodeYearofCreationDocTypeDocNameDocRetention(string BranchCode, string DocCode, short YearofCreation, string DocType, string DocName, short DocRetention) {
                 return ((DocumentsRow)(this.Rows.Find(new object[] {
                             BranchCode,
                             DocCode,
@@ -863,6 +942,10 @@ namespace DocLibrary {
                 this.columnDocName = base.Columns["DocName"];
                 this.columnDocRetention = base.Columns["DocRetention"];
                 this.columnDocCreationTime = base.Columns["DocCreationTime"];
+                this.columnDocLastUpdateTime = base.Columns["DocLastUpdateTime"];
+                this.columnTransfered = base.Columns["Transfered"];
+                this.columnDemised = base.Columns["Demised"];
+                this.columnRemark = base.Columns["Remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -880,10 +963,18 @@ namespace DocLibrary {
                 base.Columns.Add(this.columnDocType);
                 this.columnDocName = new global::System.Data.DataColumn("DocName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocName);
-                this.columnDocRetention = new global::System.Data.DataColumn("DocRetention", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnDocRetention = new global::System.Data.DataColumn("DocRetention", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocRetention);
                 this.columnDocCreationTime = new global::System.Data.DataColumn("DocCreationTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocCreationTime);
+                this.columnDocLastUpdateTime = new global::System.Data.DataColumn("DocLastUpdateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocLastUpdateTime);
+                this.columnTransfered = new global::System.Data.DataColumn("Transfered", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransfered);
+                this.columnDemised = new global::System.Data.DataColumn("Demised", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDemised);
+                this.columnRemark = new global::System.Data.DataColumn("Remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemark);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBranchCode,
                                 this.columnDocCode,
@@ -904,6 +995,7 @@ namespace DocLibrary {
                 this.columnDocName.AllowDBNull = false;
                 this.columnDocName.MaxLength = 255;
                 this.columnDocRetention.AllowDBNull = false;
+                this.columnRemark.MaxLength = 536870910;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1205,6 +1297,7 @@ namespace DocLibrary {
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
                 this.columnTypeCode.AllowDBNull = false;
                 this.columnTypeCode.Unique = true;
                 this.columnTypeCode.MaxLength = 255;
@@ -1296,6 +1389,326 @@ namespace DocLibrary {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "DocumentTypesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DocumentsListDataTable : global::System.Data.TypedTableBase<DocumentsListRow> {
+            
+            private global::System.Data.DataColumn columnDocSerial;
+            
+            private global::System.Data.DataColumn columnDocName;
+            
+            private global::System.Data.DataColumn columnDocCreationTime;
+            
+            private global::System.Data.DataColumn columnTransfered;
+            
+            private global::System.Data.DataColumn columnDemised;
+            
+            private global::System.Data.DataColumn columnDocLastUpdateTime;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListDataTable() {
+                this.TableName = "DocumentsList";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DocumentsListDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DocumentsListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocSerialColumn {
+                get {
+                    return this.columnDocSerial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocNameColumn {
+                get {
+                    return this.columnDocName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocCreationTimeColumn {
+                get {
+                    return this.columnDocCreationTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TransferedColumn {
+                get {
+                    return this.columnTransfered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DemisedColumn {
+                get {
+                    return this.columnDemised;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocLastUpdateTimeColumn {
+                get {
+                    return this.columnDocLastUpdateTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListRow this[int index] {
+                get {
+                    return ((DocumentsListRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DocumentsListRowChangeEventHandler DocumentsListRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DocumentsListRowChangeEventHandler DocumentsListRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DocumentsListRowChangeEventHandler DocumentsListRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DocumentsListRowChangeEventHandler DocumentsListRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDocumentsListRow(DocumentsListRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListRow AddDocumentsListRow(string DocSerial, string DocName, System.DateTime DocCreationTime, bool Transfered, bool Demised, System.DateTime DocLastUpdateTime) {
+                DocumentsListRow rowDocumentsListRow = ((DocumentsListRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DocSerial,
+                        DocName,
+                        DocCreationTime,
+                        Transfered,
+                        Demised,
+                        DocLastUpdateTime};
+                rowDocumentsListRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDocumentsListRow);
+                return rowDocumentsListRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DocumentsListDataTable cln = ((DocumentsListDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DocumentsListDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDocSerial = base.Columns["DocSerial"];
+                this.columnDocName = base.Columns["DocName"];
+                this.columnDocCreationTime = base.Columns["DocCreationTime"];
+                this.columnTransfered = base.Columns["Transfered"];
+                this.columnDemised = base.Columns["Demised"];
+                this.columnDocLastUpdateTime = base.Columns["DocLastUpdateTime"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDocSerial = new global::System.Data.DataColumn("DocSerial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocSerial);
+                this.columnDocName = new global::System.Data.DataColumn("DocName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocName);
+                this.columnDocCreationTime = new global::System.Data.DataColumn("DocCreationTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocCreationTime);
+                this.columnTransfered = new global::System.Data.DataColumn("Transfered", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransfered);
+                this.columnDemised = new global::System.Data.DataColumn("Demised", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDemised);
+                this.columnDocLastUpdateTime = new global::System.Data.DataColumn("DocLastUpdateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocLastUpdateTime);
+                this.columnDocSerial.ReadOnly = true;
+                this.columnDocSerial.MaxLength = 255;
+                this.columnDocName.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListRow NewDocumentsListRow() {
+                return ((DocumentsListRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DocumentsListRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DocumentsListRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DocumentsListRowChanged != null)) {
+                    this.DocumentsListRowChanged(this, new DocumentsListRowChangeEvent(((DocumentsListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DocumentsListRowChanging != null)) {
+                    this.DocumentsListRowChanging(this, new DocumentsListRowChangeEvent(((DocumentsListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DocumentsListRowDeleted != null)) {
+                    this.DocumentsListRowDeleted(this, new DocumentsListRowChangeEvent(((DocumentsListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DocumentsListRowDeleting != null)) {
+                    this.DocumentsListRowDeleting(this, new DocumentsListRowChangeEvent(((DocumentsListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDocumentsListRow(DocumentsListRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DocLibDataSet ds = new DocLibDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DocumentsListDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1516,9 +1929,9 @@ namespace DocLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DocRetention {
+            public short DocRetention {
                 get {
-                    return ((int)(this[this.tableDocuments.DocRetentionColumn]));
+                    return ((short)(this[this.tableDocuments.DocRetentionColumn]));
                 }
                 set {
                     this[this.tableDocuments.DocRetentionColumn] = value;
@@ -1538,6 +1951,70 @@ namespace DocLibrary {
                 }
                 set {
                     this[this.tableDocuments.DocCreationTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DocLastUpdateTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDocuments.DocLastUpdateTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Documents”中列“DocLastUpdateTime”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocuments.DocLastUpdateTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Transfered {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDocuments.TransferedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Documents”中列“Transfered”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocuments.TransferedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Demised {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDocuments.DemisedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Documents”中列“Demised”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocuments.DemisedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Remark {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocuments.RemarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Documents”中列“Remark”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocuments.RemarkColumn] = value;
                 }
             }
             
@@ -1586,6 +2063,54 @@ namespace DocLibrary {
             public void SetDocCreationTimeNull() {
                 this[this.tableDocuments.DocCreationTimeColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocLastUpdateTimeNull() {
+                return this.IsNull(this.tableDocuments.DocLastUpdateTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocLastUpdateTimeNull() {
+                this[this.tableDocuments.DocLastUpdateTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTransferedNull() {
+                return this.IsNull(this.tableDocuments.TransferedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTransferedNull() {
+                this[this.tableDocuments.TransferedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDemisedNull() {
+                return this.IsNull(this.tableDocuments.DemisedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDemisedNull() {
+                this[this.tableDocuments.DemisedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRemarkNull() {
+                return this.IsNull(this.tableDocuments.RemarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRemarkNull() {
+                this[this.tableDocuments.RemarkColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1606,12 +2131,7 @@ namespace DocLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID {
                 get {
-                    try {
-                        return ((int)(this[this.tableDocumentTypes.IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“DocumentTypes”中列“ID”的值为 DBNull。", e);
-                    }
+                    return ((int)(this[this.tableDocumentTypes.IDColumn]));
                 }
                 set {
                     this[this.tableDocumentTypes.IDColumn] = value;
@@ -1663,18 +2183,6 @@ namespace DocLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIDNull() {
-                return this.IsNull(this.tableDocumentTypes.IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIDNull() {
-                this[this.tableDocumentTypes.IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTypeNameNull() {
                 return this.IsNull(this.tableDocumentTypes.TypeNameColumn);
             }
@@ -1706,6 +2214,189 @@ namespace DocLibrary {
                 else {
                     return ((DocumentsRow[])(base.GetChildRows(this.Table.ChildRelations["DocumentTypesDocuments"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DocumentsListRow : global::System.Data.DataRow {
+            
+            private DocumentsListDataTable tableDocumentsList;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DocumentsListRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDocumentsList = ((DocumentsListDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DocSerial {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocumentsList.DocSerialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“DocSerial”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.DocSerialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DocName {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocumentsList.DocNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“DocName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.DocNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DocCreationTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDocumentsList.DocCreationTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“DocCreationTime”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.DocCreationTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Transfered {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDocumentsList.TransferedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“Transfered”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.TransferedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Demised {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDocumentsList.DemisedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“Demised”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.DemisedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DocLastUpdateTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDocumentsList.DocLastUpdateTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DocumentsList”中列“DocLastUpdateTime”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDocumentsList.DocLastUpdateTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocSerialNull() {
+                return this.IsNull(this.tableDocumentsList.DocSerialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocSerialNull() {
+                this[this.tableDocumentsList.DocSerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocNameNull() {
+                return this.IsNull(this.tableDocumentsList.DocNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocNameNull() {
+                this[this.tableDocumentsList.DocNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocCreationTimeNull() {
+                return this.IsNull(this.tableDocumentsList.DocCreationTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocCreationTimeNull() {
+                this[this.tableDocumentsList.DocCreationTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTransferedNull() {
+                return this.IsNull(this.tableDocumentsList.TransferedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTransferedNull() {
+                this[this.tableDocumentsList.TransferedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDemisedNull() {
+                return this.IsNull(this.tableDocumentsList.DemisedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDemisedNull() {
+                this[this.tableDocumentsList.DemisedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocLastUpdateTimeNull() {
+                return this.IsNull(this.tableDocumentsList.DocLastUpdateTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocLastUpdateTimeNull() {
+                this[this.tableDocumentsList.DocLastUpdateTimeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1797,6 +2488,40 @@ namespace DocLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DocumentTypesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DocumentsListRowChangeEvent : global::System.EventArgs {
+            
+            private DocumentsListRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListRowChangeEvent(DocumentsListRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DocumentsListRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2289,12 +3014,15 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("YearofCreation", "YearofCreation");
             tableMapping.ColumnMappings.Add("DocType", "DocType");
             tableMapping.ColumnMappings.Add("DocName", "DocName");
-            tableMapping.ColumnMappings.Add("DocRetention", "DocRetention");
             tableMapping.ColumnMappings.Add("DocCreationTime", "DocCreationTime");
+            tableMapping.ColumnMappings.Add("DocLastUpdateTime", "DocLastUpdateTime");
+            tableMapping.ColumnMappings.Add("Transfered", "Transfered");
+            tableMapping.ColumnMappings.Add("Demised", "Demised");
+            tableMapping.ColumnMappings.Add("Remark", "Remark");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Documents` WHERE (((? = 1 AND `ID` IS NULL) OR (`ID` = ?)) AND (`BranchCode` = ?) AND (`DocCode` = ?) AND (`YearofCreation` = ?) AND (`DocType` = ?) AND (`DocName` = ?) AND (`DocRetention` = ?) AND ((? = 1 AND `DocCreationTime` IS NULL) OR (`DocCreationTime` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Documents` WHERE (((? = 1 AND `ID` IS NULL) OR (`ID` = ?)) AND (`BranchCode` = ?) AND (`DocCode` = ?) AND (`YearofCreation` = ?) AND (`DocType` = ?) AND (`DocName` = ?) AND (`DocRetention` = ?) AND ((? = 1 AND `DocCreationTime` IS NULL) OR (`DocCreationTime` = ?)) AND ((? = 1 AND `Demised` IS NULL) OR (`Demised` = ?)) AND ((? = 1 AND `DocLastUpdateTime` IS NULL) OR (`DocLastUpdateTime` = ?)) AND ((? = 1 AND `Transfered` IS NULL) OR (`Transfered` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
@@ -2306,10 +3034,17 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocRetention", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocRetention", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DocCreationTime", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocCreationTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Demised", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Demised", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Transfered", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Transfered", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Documents` (`BranchCode`, `DocCode`, `YearofCreation`, `DocType`, `D" +
-                "ocName`, `DocRetention`, `DocCreationTime`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "ocName`, `DocRetention`, `DocCreationTime`, `Demised`, `DocLastUpdateTime`, `Tra" +
+                "nsfered`, `Remark`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BranchCode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BranchCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocCode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCode", global::System.Data.DataRowVersion.Current, false, null));
@@ -2318,9 +3053,13 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocRetention", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocRetention", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocCreationTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Demised", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Transfered", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Remark", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Documents` SET `BranchCode` = ?, `DocCode` = ?, `YearofCreation` = ?, `DocType` = ?, `DocName` = ?, `DocRetention` = ?, `DocCreationTime` = ? WHERE (((? = 1 AND `ID` IS NULL) OR (`ID` = ?)) AND (`BranchCode` = ?) AND (`DocCode` = ?) AND (`YearofCreation` = ?) AND (`DocType` = ?) AND (`DocName` = ?) AND (`DocRetention` = ?) AND ((? = 1 AND `DocCreationTime` IS NULL) OR (`DocCreationTime` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Documents` SET `BranchCode` = ?, `DocCode` = ?, `YearofCreation` = ?, `DocType` = ?, `DocName` = ?, `DocRetention` = ?, `DocCreationTime` = ?, `Demised` = ?, `DocLastUpdateTime` = ?, `Transfered` = ?, `Remark` = ? WHERE (((? = 1 AND `ID` IS NULL) OR (`ID` = ?)) AND (`BranchCode` = ?) AND (`DocCode` = ?) AND (`YearofCreation` = ?) AND (`DocType` = ?) AND (`DocName` = ?) AND (`DocRetention` = ?) AND ((? = 1 AND `DocCreationTime` IS NULL) OR (`DocCreationTime` = ?)) AND ((? = 1 AND `Demised` IS NULL) OR (`Demised` = ?)) AND ((? = 1 AND `DocLastUpdateTime` IS NULL) OR (`DocLastUpdateTime` = ?)) AND ((? = 1 AND `Transfered` IS NULL) OR (`Transfered` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BranchCode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BranchCode", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocCode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCode", global::System.Data.DataRowVersion.Current, false, null));
@@ -2329,6 +3068,10 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocRetention", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocRetention", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocCreationTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Demised", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Transfered", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Remark", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BranchCode", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BranchCode", global::System.Data.DataRowVersion.Original, false, null));
@@ -2339,6 +3082,12 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocRetention", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocRetention", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DocCreationTime", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocCreationTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocCreationTime", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Demised", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Demised", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Demised", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DocLastUpdateTime", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocLastUpdateTime", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Transfered", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Transfered", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Transfered", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2354,8 +3103,8 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, BranchCode, DocCode, YearofCreation, DocType, DocName, DocRetention, D" +
-                "ocCreationTime FROM Documents";
+            this._commandCollection[0].CommandText = "SELECT ID, BranchCode, DocCode, YearofCreation, DocType, DocName, DocCreationTime" +
+                ", Demised, DocLastUpdateTime, Transfered, Remark FROM Documents";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2416,7 +3165,7 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_BranchCode, string Original_DocCode, short Original_YearofCreation, string Original_DocType, string Original_DocName, int Original_DocRetention, global::System.Nullable<global::System.DateTime> Original_DocCreationTime) {
+        public virtual int Delete(int Original_ID, string Original_BranchCode, string Original_DocCode, short Original_YearofCreation, string Original_DocType, string Original_DocName, int Original_DocRetention, global::System.Nullable<global::System.DateTime> Original_DocCreationTime, bool Original_Demised, global::System.Nullable<global::System.DateTime> Original_DocLastUpdateTime, bool Original_Transfered) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID));
             if ((Original_BranchCode == null)) {
@@ -2453,6 +3202,18 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_Demised));
+            if ((Original_DocLastUpdateTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_DocLastUpdateTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((bool)(Original_Transfered));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2473,7 +3234,7 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string BranchCode, string DocCode, short YearofCreation, string DocType, string DocName, int DocRetention, global::System.Nullable<global::System.DateTime> DocCreationTime) {
+        public virtual int Insert(string BranchCode, string DocCode, short YearofCreation, string DocType, string DocName, int DocRetention, global::System.Nullable<global::System.DateTime> DocCreationTime, bool Demised, global::System.Nullable<global::System.DateTime> DocLastUpdateTime, bool Transfered, string Remark) {
             if ((BranchCode == null)) {
                 throw new global::System.ArgumentNullException("BranchCode");
             }
@@ -2506,6 +3267,20 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(Demised));
+            if ((DocLastUpdateTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(DocLastUpdateTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(Transfered));
+            if ((Remark == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Remark));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2526,7 +3301,29 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string BranchCode, string DocCode, short YearofCreation, string DocType, string DocName, int DocRetention, global::System.Nullable<global::System.DateTime> DocCreationTime, int Original_ID, string Original_BranchCode, string Original_DocCode, short Original_YearofCreation, string Original_DocType, string Original_DocName, int Original_DocRetention, global::System.Nullable<global::System.DateTime> Original_DocCreationTime) {
+        public virtual int Update(
+                    string BranchCode, 
+                    string DocCode, 
+                    short YearofCreation, 
+                    string DocType, 
+                    string DocName, 
+                    int DocRetention, 
+                    global::System.Nullable<global::System.DateTime> DocCreationTime, 
+                    bool Demised, 
+                    global::System.Nullable<global::System.DateTime> DocLastUpdateTime, 
+                    bool Transfered, 
+                    string Remark, 
+                    int Original_ID, 
+                    string Original_BranchCode, 
+                    string Original_DocCode, 
+                    short Original_YearofCreation, 
+                    string Original_DocType, 
+                    string Original_DocName, 
+                    int Original_DocRetention, 
+                    global::System.Nullable<global::System.DateTime> Original_DocCreationTime, 
+                    bool Original_Demised, 
+                    global::System.Nullable<global::System.DateTime> Original_DocLastUpdateTime, 
+                    bool Original_Transfered) {
             if ((BranchCode == null)) {
                 throw new global::System.ArgumentNullException("BranchCode");
             }
@@ -2559,42 +3356,68 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Demised));
+            if ((DocLastUpdateTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(DocLastUpdateTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Transfered));
+            if ((Remark == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Remark));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID));
             if ((Original_BranchCode == null)) {
                 throw new global::System.ArgumentNullException("Original_BranchCode");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_BranchCode));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_BranchCode));
             }
             if ((Original_DocCode == null)) {
                 throw new global::System.ArgumentNullException("Original_DocCode");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DocCode));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_DocCode));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((short)(Original_YearofCreation));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((short)(Original_YearofCreation));
             if ((Original_DocType == null)) {
                 throw new global::System.ArgumentNullException("Original_DocType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DocType));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DocType));
             }
             if ((Original_DocName == null)) {
                 throw new global::System.ArgumentNullException("Original_DocName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DocName));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_DocName));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_DocRetention));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_DocRetention));
             if ((Original_DocCreationTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_DocCreationTime.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_DocCreationTime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_Demised));
+            if ((Original_DocLastUpdateTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_DocLastUpdateTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_Transfered));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2615,8 +3438,24 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DocCreationTime, int Original_ID, string Original_BranchCode, string Original_DocCode, short Original_YearofCreation, string Original_DocType, string Original_DocName, int Original_DocRetention, global::System.Nullable<global::System.DateTime> Original_DocCreationTime) {
-            return this.Update(Original_BranchCode, Original_DocCode, Original_YearofCreation, Original_DocType, Original_DocName, Original_DocRetention, DocCreationTime, Original_ID, Original_BranchCode, Original_DocCode, Original_YearofCreation, Original_DocType, Original_DocName, Original_DocRetention, Original_DocCreationTime);
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> DocCreationTime, 
+                    bool Demised, 
+                    global::System.Nullable<global::System.DateTime> DocLastUpdateTime, 
+                    bool Transfered, 
+                    string Remark, 
+                    int Original_ID, 
+                    string Original_BranchCode, 
+                    string Original_DocCode, 
+                    short Original_YearofCreation, 
+                    string Original_DocType, 
+                    string Original_DocName, 
+                    int Original_DocRetention, 
+                    global::System.Nullable<global::System.DateTime> Original_DocCreationTime, 
+                    bool Original_Demised, 
+                    global::System.Nullable<global::System.DateTime> Original_DocLastUpdateTime, 
+                    bool Original_Transfered) {
+            return this.Update(Original_BranchCode, Original_DocCode, Original_YearofCreation, Original_DocType, Original_DocName, Original_DocRetention, DocCreationTime, Demised, DocLastUpdateTime, Transfered, Remark, Original_ID, Original_BranchCode, Original_DocCode, Original_YearofCreation, Original_DocType, Original_DocName, Original_DocRetention, Original_DocCreationTime, Original_Demised, Original_DocLastUpdateTime, Original_Transfered);
         }
     }
     
@@ -3004,6 +3843,262 @@ namespace DocLibrary.DocLibDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string TypeName, string Description, int Original_ID, string Original_TypeCode, string Original_TypeName, string Original_Description) {
             return this.Update(Original_TypeCode, TypeName, Description, Original_ID, Original_TypeCode, Original_TypeName, Original_Description);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DocumentsListTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public DocumentsListTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DocumentsList";
+            tableMapping.ColumnMappings.Add("DocSerial", "DocSerial");
+            tableMapping.ColumnMappings.Add("DocName", "DocName");
+            tableMapping.ColumnMappings.Add("DocCreationTime", "DocCreationTime");
+            tableMapping.ColumnMappings.Add("Transfered", "Transfered");
+            tableMapping.ColumnMappings.Add("Demised", "Demised");
+            tableMapping.ColumnMappings.Add("DocLastUpdateTime", "DocLastUpdateTime");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::DocLibrary.Properties.Settings.Default.DocLibConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT DocSerial, DocName, DocCreationTime, Demised, DocLastUpdateTime, Transfere" +
+                "d FROM DocumentsList";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DocLibDataSet.DocumentsListDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DocLibDataSet.DocumentsListDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DocLibDataSet.DocumentsListDataTable dataTable = new DocLibDataSet.DocumentsListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.IDbCommand[] _commandCollection;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.IDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.IDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).Connection = new global::System.Data.OleDb.OleDbConnection(global::DocLibrary.Properties.Settings.Default.DocLibConnectionString);
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).CommandText = "SELECT   format(MAX(DocCode) + 1, \'0000\') AS NextCode\r\nFROM      Documents\r\nWHERE" +
+                "   (BranchCode = ?) AND (YearofCreation = ?) AND (DocType = ?) AND (DocRetention" +
+                " = ?)";
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BranchCode", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BranchCode", global::System.Data.DataRowVersion.Current, false, null));
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.OleDb.OleDbParameter("YearofCreation", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "YearofCreation", global::System.Data.DataRowVersion.Current, false, null));
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocType", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocType", global::System.Data.DataRowVersion.Current, false, null));
+            ((global::System.Data.OleDb.OleDbCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DocRetention", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocRetention", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string GetNextCode(string BranchCode, short YearofCreation, string DocType, int DocRetention) {
+            global::System.Data.OleDb.OleDbCommand command = ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[0]));
+            if ((BranchCode == null)) {
+                throw new global::System.ArgumentNullException("BranchCode");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(BranchCode));
+            }
+            command.Parameters[1].Value = ((short)(YearofCreation));
+            if ((DocType == null)) {
+                throw new global::System.ArgumentNullException("DocType");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(DocType));
+            }
+            command.Parameters[3].Value = ((int)(DocRetention));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     

@@ -14,6 +14,10 @@ namespace DocLibrary
         [STAThread]
         static void Main()
         {
+            Properties.Settings.Default.Properties["DocLibConnectionString"].DefaultValue += @";Jet OLEDB:Database Password=test";
+            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.Reload();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
